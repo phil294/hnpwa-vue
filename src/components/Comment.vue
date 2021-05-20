@@ -53,7 +53,7 @@ export default {
   }
 
   ul.child-padding {
-    padding-left: 15px;
+    padding-left: clamp(10px, 4%, 50px);
   }
 
   .toggle {
