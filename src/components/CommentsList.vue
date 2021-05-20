@@ -65,9 +65,9 @@ export default {
 <style>
 
 .comments {
-  margin-top: 60px;
+  margin-top: 25px;
   background: #fff;
-  padding: 6px 12px;
+  padding: 6px 25px;
   overflow: hidden;
 }
 

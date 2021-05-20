@@ -55,12 +55,12 @@ export default {
   }
 
   .header-link {
-    padding: 12px 6px;
     color: #eee;
     display: inline-block;
     transition: all 0.3s ease;
     border-bottom: 1px solid #4dba87;
     font-size: 16px;
+    margin-right: 24px;
   }
 
   .header-link-active {
@@ -72,15 +72,13 @@ export default {
     font-size: 14px;
     font-weight: 700;
     border: 2px solid #f5f5f5;
-    padding: 4px;
-    margin: 0 10px;
     letter-spacing: 1px;
+    padding-left: 0;
   }
 
   .container-fixed {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 98vw;
   }
 
   .loader {
@@ -98,11 +96,5 @@ export default {
   @keyframes spin {
     from  { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
-  }
-
-  @media (min-width: 960px) {
-    .container-fixed { max-width: 960px; }
-    .header-link { padding-left: 12px; padding-right: 12px; }
-    .brand { padding: 4px; margin-left: 0; }
   }
 </style>
