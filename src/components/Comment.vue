@@ -52,7 +52,7 @@ export default {
     white-space: pre-wrap;
   }
 
-  .child-padding {
+  ul.child-padding {
     padding-left: 15px;
   }
 

@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import PostsList from './PostsList';
+import PostsList from './PostsList.vue';
 
 export default {
   name: 'home',

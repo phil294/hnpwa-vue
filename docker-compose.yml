@@ -10,7 +10,7 @@ services:
     volumes:
       - ./:/home/node/app
     expose:
-      - "3001"
+      - "3000"
     ports:
-      - "3001:3001"
-    command: "npm run dev"
+      - "3000:3000"
+    command: "yarn dev"

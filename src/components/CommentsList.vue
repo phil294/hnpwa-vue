@@ -17,9 +17,9 @@
       </p>
       <div class="comment-info">
         <span v-if="post.points !== null">{{pluralize(post.points, 'point')}}</span>
-        <span v-if="post.user">by <b>{{post.user}}</b></span>
-        <span>{{post.time_ago}} |</span>
-        <span>{{pluralize(post.comments_count, 'comment')}}</span>
+        <span v-if="post.user"> by <b>{{post.user}}</b></span>
+        <span>&nbsp;{{post.time_ago}} |</span>
+        <span>&nbsp;{{pluralize(post.comments_count, 'comment')}}</span>
       </div>
       <ul class="list-unstyled">
         <comment v-for="comment in post.comments" :comment="comment" :key="comment.id" />
@@ -30,7 +30,7 @@
 
 <script>
 import { pluralize, isShortUrl } from '../utils';
-import Comment from './Comment';
+import Comment from './Comment.vue';
 
 export default {
   name: 'comments-list',

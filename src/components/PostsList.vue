@@ -1,6 +1,6 @@
 <template>
   <ol :start="start">
-    <li v-for="post in posts" class="list-item">
+    <li v-for="post in posts" :key="post.id" class="list-item">
       <router-link
         :to="{ name: 'commentsList', params: { id: post.id } }"
         class="post-title"
@@ -18,13 +18,13 @@
         <span v-if="post.points !== null">
           {{pluralize(post.points, 'point')}}
         </span>
-        <span v-if="post.user">by <b>{{post.user}}</b></span>
-        <span>{{post.time_ago}} |</span>
+        <span v-if="post.user"> by <b>{{post.user}}</b></span>
+        <span>&nbsp;{{post.time_ago}} |</span>
         <router-link
           :to="{ name: 'commentsList', params: { id: post.id } }"
           class="comment-link"
         >
-          {{pluralize(post.comments_count, 'comment')}}
+          &nbsp;{{pluralize(post.comments_count, 'comment')}}
         </router-link><!-- .comment-link -->
       </div><!-- .txt-grey -->
     </li><!-- .list-item -->

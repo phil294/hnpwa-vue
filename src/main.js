@@ -1,14 +1,8 @@
-import 'whatwg-fetch'; // fetch-polyfill
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from "./router/index"
+import { registerSW } from 'virtual:pwa-register'
 
-import Vue from 'vue';
-import App from './App';
-import router from './router';
+createApp(App).use(router).mount('#app')
 
-Vue.config.productionTip = false;
-
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  render: h => h(App),
-});
+registerSW()
