@@ -9,5 +9,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
     }),
-  ]
+  ],
+  build: {
+    sourcemap: true,
+  },
 })
