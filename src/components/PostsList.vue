@@ -28,6 +28,9 @@
         </router-link><!-- .comment-link -->
       </div><!-- .txt-grey -->
     </li><!-- .list-item -->
+    <li>
+      <small>About: <a href="https://github.com/phil294/hnpwa-vue">source (github)</a>. This project is a fork of <a href="https://github.com/anubhav7495/hnpwa-vue">anubhav7495/hnpwa-vue (github)</a></small>
+    </li>
   </ol>
 </template>
 
