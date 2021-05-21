@@ -67,6 +67,6 @@ export default {
   color: inherit;
 }
 .comment-link:hover {
-  color: #4dba87;
+  color: var(--theme-color);
 }
 </style>

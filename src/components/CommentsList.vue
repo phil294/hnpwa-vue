@@ -1,8 +1,8 @@
 <template>
   <div class="comments">
     <div class="loader loader-margin" v-if="!post"></div> <!-- .loader -->
-    <div v-else>
-      <p>
+    <template v-else>
+      <div id="heading">
         <router-link
           :to="{ name: 'commentsList', params: { id: post.id } }"
           class="post-title"
@@ -11,10 +11,10 @@
           {{post.title}}
         </router-link>
         <a v-else :href="post.url" target="_blank" rel="noopener" class="title">
-          {{post.title}}
+          {{post.title}}&nbsp;
         </a>
         <small v-if="post.domain">({{post.domain}})</small>
-      </p>
+      </div>
       <div class="comment-info">
         <span v-if="post.points !== null">{{pluralize(post.points, 'point')}}</span>
         <span v-if="post.user"> by <b>{{post.user}}</b></span>
@@ -24,7 +24,7 @@
       <ul class="list-unstyled">
         <comment v-for="comment in post.comments" :comment="comment" :key="comment.id" />
       </ul>
-    </div>
+    </template>
   </div><!-- .comments -->
 </template>
 
@@ -66,9 +66,28 @@ export default {
 
 .comments {
   margin-top: 25px;
+  height: calc(100vh - 25px);
   background: #fff;
-  padding: 6px 25px;
-  overflow: hidden;
+  padding: 6px 1.5vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.comments >ul>li { --level: 1 }
+.comments >ul>li>ul>li { --level: 2 }
+.comments >ul>li>ul>li>ul>li { --level: 3 }
+.comments >ul>li>ul>li>ul>li>ul>li { --level: 4 }
+.comments >ul>li>ul>li>ul>li>ul>li>ul>li { --level: 5 }
+.comments >ul>li>ul>li>ul>li>ul>li>ul>li>ul>li { --level: 6 }
+.comments >ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li { --level: 7 }
+.comments >ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li { --level: 8 }
+.comments >ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li { --level: 9 }
+.comments >ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li { --level: 10 }
+
+.comments > ul {
+  flex: 1;
+  overflow: auto;
+  padding-right: 1vw;
 }
 
 .title {
@@ -83,10 +102,13 @@ export default {
 .list-unstyled {
   list-style: none;
   padding-left: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .comment-info {
   padding-bottom: 12px;
   border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
 }
 </style>

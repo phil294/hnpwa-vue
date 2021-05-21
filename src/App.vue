@@ -35,13 +35,17 @@ export default {
     color: #333;
     background-color: #f5f5f5;
     margin: 0;
-    overflow-y: scroll;
+    --theme-color: #4dba87;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   a {
     text-decoration: none;
     cursor: pointer;
-    color:#4dba87;
+    color:var(--theme-color);
   }
 
   .header {
@@ -49,8 +53,8 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    background: #4dba87;
-    z-index: 5;
+    background: var(--theme-color);
+    z-index: 1000;
     overflow: hidden;
   }
 
@@ -58,7 +62,7 @@ export default {
     color: #eee;
     display: inline-block;
     transition: all 0.3s ease;
-    border-bottom: 1px solid #4dba87;
+    border-bottom: 1px solid var(--theme-color);
     font-size: 16px;
     margin-right: 24px;
   }
@@ -78,7 +82,6 @@ export default {
 
   .container-fixed {
     width: 100%;
-    max-width: 98vw;
   }
 
   .loader {
@@ -86,7 +89,7 @@ export default {
     height: 30px;
     border-radius: 50%;
     border: 4px solid #eee;
-    border-top: 4px solid #4dba87;
+    border-top: 4px solid var(--theme-color);
     animation: spin 1s linear infinite;
     margin: calc(50vh - 75px) auto;
   }
