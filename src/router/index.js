@@ -5,7 +5,7 @@ const Home = () => import('../components/Home.vue');
 const CommentsList = () => import('../components/CommentsList.vue');
 
 export default createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('/hn'),
     routes: [
         { path: '/', redirect: '/news' },
         { path: '/news/:page?', name: 'news', component: Home },
